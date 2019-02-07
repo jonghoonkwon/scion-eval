@@ -1,6 +1,10 @@
 # scion-eval
-# https://github.com/jonghoonkwon/scion-eval.git
-#
-# a simple evaluation project for the scionlab paper
-#
-# 04.07.2019
+============
+
+https://github.com/jonghoonkwon/scion-eval.git
+
+A simple evaluation project for the scionlab paper.
+
+* Loading Cert/key from the scionproto gen folder
+* Creating an experiment topology 
+* Supporting parameter configuration for scion routing
