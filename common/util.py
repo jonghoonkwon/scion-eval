@@ -109,7 +109,7 @@ def write_yaml(file_path, yaml_dict):
 
 
 def copy_remote(src_path, dst_path):
-	"""Copy a file or directory to remote machine via SCP"""
+    """Copy a file or directory to remote machine via SCP"""
     assert ':' not in src_path, src_path
     idx = dst_path.find(':')
     dst = dst_path[:idx]
@@ -142,7 +142,7 @@ def exist_remote_file(target, path):
 
 
 def run_ssh(target, commands):
-	"""Execute commands on remote machine via SSH"""
+    """Execute commands on remote machine via SSH"""
     # cmd = "ssh scion@%s '%s'" % (target, commands)
     # res = run(cmd, shell=True, stdout=PIPE).stdout.decode('utf-8')
     res = call(['ssh', target, commands])

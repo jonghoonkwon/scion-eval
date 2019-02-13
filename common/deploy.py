@@ -38,7 +38,7 @@ TARGET_PATH = os.path.join(PROJECT_ROOT, GEN_PATH)
 
 
 def init_remote_dir(target, path):
-	"""Initialize remote directory """
+    """Initialize remote directory """
     if exist_remote_dir(target, path):
         cmd = 'rm -rf %s/*' % path
         run_ssh(target, cmd)
@@ -48,7 +48,7 @@ def init_remote_dir(target, path):
 
 
 def deploy_script(src_path, deploy_plan):
-	"""Copy a script file to remote machines and make executable """
+    """Copy a script file to remote machines and make executable """
     for target_addr in deploy_plan.keys():
         file_name = src_path.split('/')[-1]
         target_path = '/tmp/%s' % file_name
@@ -60,7 +60,7 @@ def deploy_script(src_path, deploy_plan):
 
 
 def deploy_gen(src_path, deploy_plan):
-	"""Copy gen folder to remote machines """
+    """Copy gen folder to remote machines """
     for target_addr, ases in deploy_plan.items():
         print("[INF] ======== Deploying new gen folder =========")
         print("Target: %s" % target_addr)
@@ -83,7 +83,7 @@ def deploy_gen(src_path, deploy_plan):
 
 
 def stop_scion(deploy_plan):
-	"""Stop scion via SSH"""
+    """Stop scion via SSH"""
     cmd = 'source ~/.profile; cd %s; ./scion.sh stop; ./supervisor/supervisor.sh shutdown' % PROJECT_ROOT
     for target_addr in deploy_plan.keys():
         print("[INF] =========== Stop running scion ============")
@@ -91,7 +91,7 @@ def stop_scion(deploy_plan):
         run_ssh(target_addr, cmd)
 
 def run_scion(deploy_plan):
-	"""Start scion via SSH"""
+    """Start scion via SSH"""
     cmd = 'source ~/.profile; cd %s; ./scion.sh run' % PROJECT_ROOT
     for target_addr in deploy_plan.keys():
         print("[INF] =========== Start scion network ===========")
